@@ -1,8 +1,6 @@
 # This is workflow name
 name: Hello
-
-# runs on a trigger
-  on:
+on:
     push:
       branches: [main]
 
