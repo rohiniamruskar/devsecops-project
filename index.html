@@ -1,1 +1,308 @@
-hello dosto
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Rohini Amruskar | DevOps & Web Developer</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+body{
+    background: linear-gradient(135deg,#0f2027,#203a43,#2c5364);
+    min-height:100vh;
+    color:#fff;
+    overflow-x:hidden;
+}
+
+/* Floating background blobs */
+body::before, body::after{
+    content:"";
+    position:fixed;
+    width:500px;
+    height:500px;
+    border-radius:50%;
+    filter:blur(120px);
+    z-index:-1;
+}
+body::before{
+    background:#00f2fe;
+    top:-100px;
+    left:-100px;
+}
+body::after{
+    background:#4facfe;
+    bottom:-150px;
+    right:-100px;
+}
+
+/* Navbar */
+nav{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:20px 10%;
+    backdrop-filter: blur(15px);
+    background:rgba(255,255,255,0.05);
+    border-bottom:1px solid rgba(255,255,255,0.1);
+    position:sticky;
+    top:0;
+}
+
+nav h2{
+    font-weight:600;
+    letter-spacing:1px;
+}
+
+nav ul{
+    display:flex;
+    list-style:none;
+    gap:30px;
+}
+
+nav ul li a{
+    text-decoration:none;
+    color:#fff;
+    transition:0.3s;
+    position:relative;
+}
+
+nav ul li a::after{
+    content:"";
+    position:absolute;
+    left:0;
+    bottom:-5px;
+    width:0%;
+    height:2px;
+    background:#00f2fe;
+    transition:0.3s;
+}
+
+nav ul li a:hover{
+    color:#00f2fe;
+}
+nav ul li a:hover::after{
+    width:100%;
+}
+
+/* Hero Section */
+.hero{
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    height:90vh;
+    padding:0 10%;
+}
+
+.hero h1{
+    font-size:3rem;
+    font-weight:700;
+    background:linear-gradient(to right,#00f2fe,#4facfe);
+    -webkit-background-clip:text;
+    -webkit-text-fill-color:transparent;
+}
+
+.hero p{
+    margin-top:20px;
+    font-size:1.1rem;
+    opacity:0.85;
+    max-width:700px;
+}
+
+.hero button{
+    margin-top:30px;
+    padding:12px 30px;
+    border:none;
+    border-radius:30px;
+    background:linear-gradient(135deg,#00f2fe,#4facfe);
+    color:#000;
+    font-weight:600;
+    cursor:pointer;
+    transition:0.4s;
+}
+
+.hero button:hover{
+    transform:scale(1.1);
+    box-shadow:0 10px 25px rgba(0,242,254,0.6);
+}
+
+/* Section Base */
+section{
+    padding:80px 10%;
+}
+
+/* Glass Card */
+.glass{
+    background:rgba(255,255,255,0.08);
+    backdrop-filter:blur(20px);
+    border:1px solid rgba(255,255,255,0.2);
+    border-radius:20px;
+    padding:40px;
+    transition:0.4s;
+}
+
+.glass:hover{
+    transform:translateY(-10px);
+    box-shadow:0 15px 35px rgba(0,0,0,0.5);
+}
+
+/* Skills */
+.skills-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+    gap:25px;
+}
+
+.skill-card{
+    text-align:center;
+    padding:25px;
+    border-radius:15px;
+    background:rgba(255,255,255,0.06);
+    transition:0.4s;
+}
+
+.skill-card:hover{
+    background:rgba(0,242,254,0.15);
+    transform:scale(1.05);
+}
+
+.skill-card h3{
+    margin-bottom:10px;
+}
+
+/* Projects */
+.project{
+    margin-bottom:30px;
+}
+
+.project h3{
+    margin-bottom:10px;
+    color:#00f2fe;
+}
+
+/* Contact */
+.contact{
+    text-align:center;
+}
+
+footer{
+    text-align:center;
+    padding:20px;
+    opacity:0.6;
+}
+
+/* Responsive */
+@media(max-width:768px){
+    .hero h1{
+        font-size:2.2rem;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<nav>
+    <h2>Rohini Amruskar</h2>
+    <ul>
+        <li><a href="#about">About</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#contact">Contact</a></li>
+    </ul>
+</nav>
+
+<section class="hero">
+    <h1>DevOps & Web Developer</h1>
+    <p>
+        Based in Mumbai, India. Passionate about Linux systems, Docker, Networking, 
+        and building scalable web applications. I love troubleshooting complex problems 
+        and continuously improving infrastructure and performance.
+    </p>
+    <button onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">
+        Let's Connect
+    </button>
+</section>
+
+<section id="about">
+    <div class="glass">
+        <h2>About Me</h2>
+        <p style="margin-top:20px;">
+            I'm a problem solver focused on DevOps practices and backend development.
+            With hands-on experience in Linux administration, Docker containerization,
+            networking fundamentals, and PHP + SQL development, I aim to build reliable,
+            efficient, and scalable systems.
+        </p>
+    </div>
+</section>
+
+<section id="skills">
+    <h2 style="margin-bottom:40px;">Technical Skills</h2>
+    <div class="skills-grid">
+        <div class="skill-card">
+            <h3>Linux</h3>
+            <p>User management, permissions, system troubleshooting</p>
+        </div>
+        <div class="skill-card">
+            <h3>Docker</h3>
+            <p>Images, Containers, Dockerfiles, Networking</p>
+        </div>
+        <div class="skill-card">
+            <h3>Networking</h3>
+            <p>SCP, SSH, IP concepts, troubleshooting</p>
+        </div>
+        <div class="skill-card">
+            <h3>PHP</h3>
+            <p>Backend logic, APIs, debugging</p>
+        </div>
+        <div class="skill-card">
+            <h3>SQL</h3>
+            <p>Queries, optimization, database management</p>
+        </div>
+        <div class="skill-card">
+            <h3>Git</h3>
+            <p>Branching, merging, version control workflows</p>
+        </div>
+    </div>
+</section>
+
+<section id="projects">
+    <h2 style="margin-bottom:40px;">Projects</h2>
+    <div class="glass project">
+        <h3>DevOps Practice Lab</h3>
+        <p>Hands-on environment for practicing Docker, Linux user management, SCP, and networking troubleshooting.</p>
+    </div>
+    <div class="glass project">
+        <h3>Case Management System</h3>
+        <p>PHP and SQL based system with role-based access control, data management, and optimized queries.</p>
+    </div>
+</section>
+
+<section id="contact" class="contact">
+    <div class="glass">
+        <h2>Get In Touch</h2>
+        <p style="margin-top:20px;">
+            Interested in collaborating or working together?
+            Let's build something impactful.
+        </p>
+        <p style="margin-top:15px; font-weight:600;">
+            📍 Mumbai, India
+        </p>
+    </div>
+</section>
+
+<footer>
+    © 2026 Rohini Amruskar | Designed with Glassmorphism UI
+</footer>
+
+</body>
+</html>
