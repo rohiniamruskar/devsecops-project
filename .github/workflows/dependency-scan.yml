@@ -1,0 +1,21 @@
+# packages - isssue and vulenurability scan
+# pip Audit
+
+name: Dependancy scan 
+
+on:
+    workflow_call:
+
+jobs:
+    dependency-checks:
+        runs-on: ubuntu latest
+
+        steps:
+            - name: code checkout
+              uses: actions/checkout@v4
+
+            - name: install pip audit
+              run:  pip install pip-audit
+
+            - name: Audit Dependencies
+              run: pip-audit -r requirements.txt 
