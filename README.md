@@ -25,6 +25,8 @@ Docker Image Build
    ↓
 Trivy Image Security Scan
    ↓
+DockerHub Push
+   ↓
 Deployment
 ```
 
