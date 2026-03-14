@@ -148,6 +148,5 @@ Pipeline performs:
 
 Deployment:
 
-```
 docker compose up -d --build
 ```
