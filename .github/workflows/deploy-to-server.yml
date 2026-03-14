@@ -22,8 +22,10 @@ jobs:
                 username:  ${{ secrets.EC2_SSH_USER }}
                 key:  ${{ secrets.SSH_PRIVATE_KEY }}
                 script: |
-                    echo "Staring Deployment"
-                    # mkdir devops     -------- make already
+                    echo "Installing required packages and folder"
+                    sudo apt-get update && sudo apt-get install docker.io docker-compose-v2 -y 
+                    sudo usermod -aG docker $USER && newgrp docker
+                    mkdir -p devops 
 
             - name: Copy the docker-compose file
               uses: appleboy/scp-action@v1
@@ -35,7 +37,7 @@ jobs:
                 target: ~/devops
 
 
-            - name: SSH to prod server and create app folder
+            - name: SSH to prod server
               uses: appleboy/ssh-action@v1.0.3
               with:
                 host: ${{ secrets.EC2_SSH_HOST }}
@@ -43,8 +45,6 @@ jobs:
                 key:  ${{ secrets.SSH_PRIVATE_KEY }}
                 script: |
                     echo "Running App" 
-                    sudo apt-get update && sudo apt-get install docker.io docker-compose-v2 -y 
-                    sudo usermod -aG docker $USER && newgrp docker
                     export DOCKERHUB_USER=${{ vars.DOCKERHUB_USER }}
                     export DOCKER_TAG=${{ github.sha }}
                     echo ${{ secrets.DOCKERHUB_TOKEN }} | docker login -u ${{ vars.DOCKERHUB_USER }} --password-stdin
