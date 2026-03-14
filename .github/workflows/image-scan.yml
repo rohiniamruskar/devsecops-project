@@ -5,7 +5,7 @@ on:
     workflow_call:
 
 jobs:
-    Image-sacanner:
+    Image-scanner:
         runs-on: ubuntu-latest
         
         steps:
