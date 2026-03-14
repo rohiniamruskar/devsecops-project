@@ -4,8 +4,9 @@ name: Deploy to Server
 
 
 on:
-    workflow_call:
-
+    push:
+        branches: [main]
+    
 jobs: 
     deploy:
         runs-on: ubuntu-latest
