@@ -134,7 +134,7 @@ Detects:
 
 Pipeline fails if critical vulnerabilities are found.
 
----
+```
 
 # 🚀 Deployment Stage
 
